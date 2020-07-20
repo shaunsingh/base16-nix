@@ -1,17 +1,27 @@
 # Base16 themes for home manager
 
-This is a messy, personal set of scripts for managing colour schemes within
-hame manager. I am yet to share it because there are some unprincipled
-components likely to break (e.g. using `sed` to read yaml files), and because
-the build functions it introduces use sizable external dependencies.
+This is a fork of [atpotts/base16-nix](https://github.com/atpotts/base16-nix)
 
-I have found aspects of this very nice to use, and have tried to clean it up
-enough to be suitable for others to adapt. YMMV however.
+Differences:
+- Exports the home manager module as a flake output.
+- Restricts scope to official base16-themes.
+- Prefers the colors-only mustache template if supported, as usually I prefer to
+  do my own customisation.
 
-## Usage
+##  Usage
 
-N.b. this example roughly reflects my usage, but I haven't tried to use it
-directly, so there may be typos / bugs
+import this flake in your 'flake.nix':
+```nix
+inputs.base16.url = 'github:lukebfox/base16-nix';
+```
+then, in any home-manager configuration:
+```nix
+home.user.${user} = {config,pkgs,lib}:{
+  imports = [ base16.hmModule ];
+
+}
+```
+
 
 ```nix
 {pkgs, lib, config, ...}:
