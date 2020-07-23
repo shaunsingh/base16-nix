@@ -5,7 +5,7 @@ with lib;
 let
   cfg = config.themes.base16;
   inherit (builtins) pathExists;
-  
+
   schemes   = importJSON ./schemes.json;
   templates = importJSON ./templates.json;
 
@@ -66,7 +66,10 @@ in
       type=types.str;
       default="tomorrow";
     };
-    themes.base16.tone = mkOption
+    themes.base16.tone = mkOption {
+      type=types.str;
+      default="light";
+    };
   };
   config = {
     lib.base16.base16template = mustache cfg.scheme cfg.variant;
