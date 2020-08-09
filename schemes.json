@@ -343,8 +343,8 @@
   },
   "vice": {
     "url": "https://github.com/Thomashighbaugh/base16-vice-scheme",
-    "rev": "142c92c30c9c60e764c267c151c6265d6ea8d540",
-    "sha256": "1gx7h4s9wm96941p8kbh390nyqjmar369hfwmxg6x7qsjb1rskz7",
+    "rev": "d91e59cc58772928afa0e3686bf0807e35ac4330",
+    "sha256": "03m1lssng85fs94a010j1lfn744ski1zzj2z85xvs1r86w0prznn",
     "fetchSubmodules": false
   },
   "woodland": {

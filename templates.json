@@ -103,8 +103,8 @@
   },
   "gtk2": {
     "url": "https://github.com/dawikur/base16-gtk2",
-    "rev": "8a1a71bde8efb42498be26465b3f81faf564e3b7",
-    "sha256": "110l9qy5ygi1fwz5fi5rldsbziwgm0k3jb1d63ias5whgw21kfa1",
+    "rev": "4e43875501dc7c6366296b4393268cb4a8c2d223",
+    "sha256": "0pclinv6yk6b4b9fwgsplvafn9qz2n6hkf1hxg0vz8v3nrdv1vgh",
     "fetchSubmodules": false
   },
   "highlight": {
@@ -247,8 +247,8 @@
   },
   "qutebrowser": {
     "url": "https://github.com/theova/base16-qutebrowser",
-    "rev": "2105f3747a42162315b6dadd4a3d3f856ef3a9b0",
-    "sha256": "1c5rhr2jymj38x43lqbn4mpkg203x239v7n4ibcxv0h3a764gjgd",
+    "rev": "edc0d85e062b293e1146a53178605894bdb784ef",
+    "sha256": "1bri896palqdx0mglbp2ppz6gi9axxjbahz31fkmgzcs9djhvwy2",
     "fetchSubmodules": false
   },
   "rofi": {
@@ -277,8 +277,8 @@
   },
   "stumpwm": {
     "url": "https://github.com/tpine/base16-stumpwm",
-    "rev": "df0a85f2f03d7af06dbafc524f45f97fdea2d21a",
-    "sha256": "0ql65yngr3mrg463lgkhjdqr1vfw2x4p3nkrjdgjzxm9z211m5pm",
+    "rev": "6510b7ca80cdc6ea0a56b7ec1f00286e090d3772",
+    "sha256": "11v39i08nf69kf36adp5m0gmm6vl5q6gnifdx8p6c5r2vl14cpz3",
     "fetchSubmodules": false
   },
   "styles": {
@@ -313,8 +313,8 @@
   },
   "textadept": {
     "url": "https://github.com/rgieseke/base16-textadept",
-    "rev": "eefe506cc853197c7df24439d6394d6f5bf4959c",
-    "sha256": "08ws58lmdq9n8bi70pynizj2xv2vw45sfx6fiv2rxkhdgqa435nm",
+    "rev": "d8a4061ed28916e2a66230d2d9de620fb63ec1b2",
+    "sha256": "0mm4irmilxy36ci4mrf4kbfp020z9fnnmya48m3kq1zsms1n59ha",
     "fetchSubmodules": false
   },
   "textmate": {
