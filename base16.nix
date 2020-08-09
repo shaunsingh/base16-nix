@@ -14,15 +14,14 @@ let
   mkTheme = scheme: variant:
     "${pkgs.fetchgit (schemes."${scheme}")}/${variant}.yaml";
 
-  # Source file for a given base16 template. Use the colors-only template
-  # if one exists, as I generally prefer to do my own customisations.
+  # Source file for a given base16 template.
   # Returns the nix store path of the file.
-  mkTemplate = name:
+  mkTemplate = name: type:
     let
       templateDir = "${pkgs.fetchgit (templates."${name}")}/templates";
     in
-      if pathExists (templateDir + "/colors.mustache")
-      then templateDir + "/colors.mustache"
+      if pathExists (templateDir + "/${type}.mustache")
+      then templateDir + "/${type}.mustache"
       else templateDir + "/default.mustache";
 
   # The theme yaml files only supply 16 hex values, but the templates take
@@ -44,11 +43,11 @@ let
 
   # Mustache engine. Applies any theme to any template, providing they are
   # included in the local json source files.
-  mustache = scheme: variant: name:
+  mustache = scheme: variant: name: type:
     pkgs.stdenv.mkDerivation {
       name = "${name}-base16-${variant}";
       data = preprocess (mkTheme scheme variant);
-      src  = mkTemplate name;
+      src  = mkTemplate name type;
       phases = [ "buildPhase" ];
       buildPhase ="${pkgs.mustache-go}/bin/mustache $data $src > $out";
       allowSubstitutes = false;  # will never be in cache
@@ -73,9 +72,15 @@ in
       type = types.attrsOf types.str;
       default = {};
     };
+    themes.base16.defaultTemplateType = mkOption {
+      type = types.str;
+      default = "default";
+      example = "colors";
+    };
   };
   config = {
     lib.base16.theme = schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
-    lib.base16.templateFile = mustache cfg.scheme cfg.variant;
+    lib.base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
+        mustache cfg.scheme cfg.variant name type;
   };
 }

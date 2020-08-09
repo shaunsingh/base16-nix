@@ -5,6 +5,7 @@ This is a fork of [lukebfox/base16-nix](https://github.com/lukebfox/base16-nix)
 Differences:
 
 - Returns support for obtaining color values from the color scheme
+- Added possibility to select a template type (`'default'`, `'color'`, etc)
 - Removed unused files
 
 ## Usage
@@ -34,10 +35,11 @@ home.user.${user} = { config, pkgs, lib }: {
       enable = true;
       scheme = "solarized";
       variant = "solarized-dark";
+      defaultTemplateType = "default";
       # Add extra variables for inclusion in custom templates
       extraParams = {
-        fontName = mkDefault "Roboto";
-        fontSize = mkDefault "12";
+        fontName = "Roboto Mono";
+        fontSize = "12";
       };
     };
 
@@ -45,17 +47,19 @@ home.user.${user} = { config, pkgs, lib }: {
     ###############################
 
     programs.bash.initExtra = ''
-      source ${config.base16.templateFile "shell"}
+      source ${config.lib.base16.templateFile { name = "shell"; };}
     '';
-    home.file.".vim/colors/mycolorscheme.vim".source =
-      config.base16.templateFile "vim";
+    programs.rofi = {
+      enable = true;
+      theme = "${config.lib.base16.templateFile { name = "rofi"; type = "color"; };}";
+    };
 
     # 2. Template strings directly into other home-manager configuration
     ####################################################################
 
     services.dunst = {
         enable = true;
-        settings = with config.base16.theme;
+        settings = with config.lib.base16.theme;
             {
               global = {
                 geometry         =  "600x1-800+-3";
