@@ -18,12 +18,12 @@ let
   # if one exists, as I generally prefer to do my own customisations.
   # Returns the nix store path of the file.
   mkTemplate = name:
-  let
-    templateDir = "${pkgs.fetchgit (templates."${name}")}/templates";
+    let
+      templateDir = "${pkgs.fetchgit (templates."${name}")}/templates";
     in
-    if pathExists (templateDir + "/colors.mustache")
-    then templateDir + "/colors.mustache"
-    else templateDir + "/default.mustache";
+      if pathExists (templateDir + "/colors.mustache")
+      then templateDir + "/colors.mustache"
+      else templateDir + "/default.mustache";
 
   # The theme yaml files only supply 16 hex values, but the templates take
   # a transformation of this data such as rgb. The hacky python script pre-
@@ -32,13 +32,13 @@ let
   python = pkgs.python.withPackages (ps: [ ps.pyyaml ]);
   preprocess = src:
     pkgs.stdenv.mkDerivation {
-      name = "placeholder-change-me";
+      name = "yaml";
       inherit src;
       builder = pkgs.writeText "builder.sh" ''
-            slug_all=$(${pkgs.coreutils}/bin/basename $src)
-            slug=''${slug_all%.*}
-            ${python}/bin/python ${./base16writer.py} $slug < $src > $out
-          '';
+        slug_all=$(${pkgs.coreutils}/bin/basename $src)
+        slug=''${slug_all%.*}
+        ${python}/bin/python ${./base16writer.py} $slug < $src > $out
+      '';
       allowSubstitutes = false;  # will never be in cache
     };
 
@@ -54,24 +54,28 @@ let
       allowSubstitutes = false;  # will never be in cache
     };
 
+  schemeJSON = scheme: variant:
+    importJSON (preprocess (mkTheme scheme variant));
+
 in
 {
   options = {
     themes.base16.enable = mkEnableOption "Base 16 Color Schemes";
     themes.base16.scheme = mkOption {
-      type=types.str;
-      default="tomorrow";
+      type = types.str;
+      default = "solarized";
     };
     themes.base16.variant = mkOption {
-      type=types.str;
-      default="tomorrow";
+      type = types.str;
+      default = "solarized-dark";
     };
-    themes.base16.tone = mkOption {
-      type=types.str;
-      default="light";
+    themes.base16.extraParams = mkOption {
+      type = types.attrsOf types.str;
+      default = {};
     };
   };
   config = {
-    lib.base16.base16template = mustache cfg.scheme cfg.variant;
+    lib.base16.theme = schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
+    lib.base16.templateFile = mustache cfg.scheme cfg.variant;
   };
 }

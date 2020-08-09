@@ -1,84 +1,68 @@
 # Base16 themes for home manager
 
-This is a fork of [atpotts/base16-nix](https://github.com/atpotts/base16-nix)
+This is a fork of [lukebfox/base16-nix](https://github.com/lukebfox/base16-nix)
 
 Differences:
-- Exports the home manager module as a flake output.
-- Restricts scope to official base16-themes.
-- Prefers the colors-only mustache template if supported, as usually I prefer to
-  do my own customisation.
 
-##  Usage
+- Returns support for obtaining color values from the color scheme
+- Removed unused files
+
+## Usage
 
 import this flake in your 'flake.nix':
+
 ```nix
-inputs.base16.url = 'github:lukebfox/base16-nix';
+inputs.base16.url = 'github:alukardbf/base16-nix';
 ```
+
 then, in any home-manager configuration:
+
 ```nix
-home.user.${user} = {config,pkgs,lib}:{
+home.user.${user} = { config, pkgs, lib }: {
   imports = [ base16.hmModule ];
 
 }
 ```
 
-
 ```nix
-{pkgs, lib, config, ...}:
+{ pkgs, lib, config, ...}:
 {
-  imports = [ ./base16.nix ];
   config = {
 
-    # Choose your themee
+    # Choose your theme
     themes.base16 = {
       enable = true;
       scheme = "solarized";
       variant = "solarized-dark";
-
       # Add extra variables for inclusion in custom templates
       extraParams = {
-        fontname = mkDefault  "Inconsolata LGC for Powerline";
-        headerfontname = mkDefault  "Cabin";
-        bodysize = mkDefault  "10";
-        headersize = mkDefault  "12";
-        xdpi= mkDefault ''
-          Xft.hintstyle: hintfull
-        '';
-    };
+        fontName = mkDefault "Roboto";
+        fontSize = mkDefault "12";
+      };
     };
 
     # 1. Use pre-provided templates
     ###############################
 
     programs.bash.initExtra = ''
-      source ${config.lib.base16.base16template "shell"}
+      source ${config.base16.templateFile "shell"}
     '';
     home.file.".vim/colors/mycolorscheme.vim".source =
-      config.lib.base16.base16template "vim";
+      config.base16.templateFile "vim";
 
-    # 2. Use your own templates
-    ###########################
-
-    home.file.".Xresources".source = config.lib.base16.template {
-      src = ./examples/Xresources;
-    };
-    home.file.".xmonad/xmobarrc".source = config.lib.base16.template {
-      src = ./examples/xmobarrc;
-    };
-
-    # 3. Template strings directly into other home-manager configuration
+    # 2. Template strings directly into other home-manager configuration
     ####################################################################
 
     services.dunst = {
         enable = true;
-        settings = with config.lib.base16.theme;
+        settings = with config.base16.theme;
             {
               global = {
                 geometry         =  "600x1-800+-3";
-                font             = "${headerfontname} ${headersize}";
                 icon_path =
                   config.services.dunst.settings.global.icon_folders;
                 alignment        = "right";
+                font = "${fontName} ${fontSize}";
                 frame_width      = 0;
                 separator_height = 0;
                 sort             = true;
@@ -98,30 +82,37 @@ home.user.${user} = {config,pkgs,lib}:{
               };
         };
      };
-
-
   };
 }
 ```
 
 ## Reloading
 
-Changing themes involves switching the theme definitoin and typing
+Changing themes involves switching the theme definition and typing
 `home-manager switch`. There is no attempt in general to force programs to
 reload, and not all are able to reload their configs, although I have found
 that reloading xmonad and occasionally restarting applications has been
 enough.
 
-You are unlikely to achieve a complet switch without logging out and logging back
+You are unlikely to achieve a complete switch without logging out and logging back
 in again.
 
 ## Todo
 
-Provide better support for custom schemes (currently this assumes you'll
-want to use something in the base16 repositories, but there is no reason
-for this).
+Provide better support for custom schemes (currently it
+is assumed that you'll use something in base16
+repositories, but there is no reason to).
 
 ## Updating Sources
 
-`cd` into the directory in which the templates.yaml and schemes.yaml are
-located, and run update_sources.sh
+If you're using nix flakes:
+
+- Fork this repository
+- `cd` into repository dir
+- Enter `nix develop` and then run `update-base16`
+- Commit and push new files
+
+If you're **not** using nix flakes:
+
+- `cd` into repository dir
+- Run `update_sources.sh`
