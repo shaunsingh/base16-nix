@@ -6,6 +6,7 @@ Differences:
 
 - Returns support for obtaining color values from the color scheme
 - Added possibility to select a template type (`'default'`, `'color'`, etc)
+- Added possibility to use custom schemes by importing local files or remote repository
 - Removed unused files
 
 ## Usage
@@ -90,6 +91,57 @@ home.user.${user} = { config, pkgs, lib }: {
 }
 ```
 
+You can also use local schemes:
+
+```nix
+{ pkgs, lib, config, ...}:
+{
+  config = {
+    # Choose your theme
+    themes.base16 = {
+      enable = true;
+      customScheme = {
+        enable = true;
+        path = ./base16-custom-scheme.yaml;
+      }
+    };
+  };
+}
+```
+
+Or use an imported color scheme:
+
+For example, import scheme repository into yours 'flake.nix'
+
+```nix
+inputs.base16-horizon-scheme = {
+  url = github:michael-ball/base16-horizon-scheme;
+  flake = false;
+};
+```
+
+```nix
+{ pkgs, lib, config, inputs, ...}:
+{
+  config = {
+    # Choose your theme
+    themes.base16 = {
+      enable = true;
+      customScheme = {
+        enable = true;
+        path = "${inputs.base16-horizon-scheme}/horizon-dark.yaml";
+      }
+    };
+
+    # The template will be generated from the local scheme
+    programs.rofi = {
+      enable = true;
+      theme = "${config.lib.base16.templateFile { name = "rofi"; };}";
+    };
+  };
+}
+```
+
 ## Reloading
 
 Changing themes involves switching the theme definition and typing
@@ -100,12 +152,6 @@ enough.
 
 You are unlikely to achieve a complete switch without logging out and logging back
 in again.
-
-## Todo
-
-Provide better support for custom schemes (currently it
-is assumed that you'll use something in base16
-repositories, but there is no reason to).
 
 ## Updating Sources
 
@@ -120,3 +166,7 @@ If you're **not** using nix flakes:
 
 - `cd` into repository dir
 - Run `update_sources.sh`
+
+## Todo
+
+Improve the source code.

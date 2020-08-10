@@ -53,34 +53,64 @@ let
       allowSubstitutes = false;  # will never be in cache
     };
 
+  mustacheCustom = schemePath: name: type:
+    pkgs.stdenv.mkDerivation {
+      name = "${name}-base16-scheme";
+      data = preprocess schemePath;
+      src  = mkTemplate name type;
+      phases = [ "buildPhase" ];
+      buildPhase ="${pkgs.mustache-go}/bin/mustache $data $src > $out";
+      allowSubstitutes = false;  # will never be in cache
+    };
+
   schemeJSON = scheme: variant:
     importJSON (preprocess (mkTheme scheme variant));
 
+  schemeJSONCustom = schemePath:
+    importJSON (preprocess schemePath);
+
 in
 {
-  options = {
-    themes.base16.enable = mkEnableOption "Base 16 Color Schemes";
-    themes.base16.scheme = mkOption {
-      type = types.str;
-      default = "solarized";
-    };
-    themes.base16.variant = mkOption {
-      type = types.str;
-      default = "solarized-dark";
-    };
-    themes.base16.extraParams = mkOption {
-      type = types.attrsOf types.str;
-      default = {};
-    };
-    themes.base16.defaultTemplateType = mkOption {
-      type = types.str;
-      default = "default";
-      example = "colors";
+  options = with types; {
+    themes.base16 = {
+      enable = mkEnableOption "Base 16 Color Schemes";
+      customScheme = {
+        enable = mkEnableOption "Use custom scheme instead of remote repository";
+        path = mkOption {
+          type = nullOr path;
+          default = null;
+        };
+      };
+      scheme = mkOption {
+        type = str;
+        default = "solarized";
+      };
+      variant = mkOption {
+        type = str;
+        default = "solarized-dark";
+      };
+      extraParams = mkOption {
+        type = attrsOf str;
+        default = {};
+      };
+      defaultTemplateType = mkOption {
+        type = str;
+        default = "default";
+        example = "colors";
+      };
     };
   };
   config = {
-    lib.base16.theme = schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
+    lib.base16.theme =
+      if cfg.customScheme.enable then
+        schemeJSONCustom cfg.customScheme.path // cfg.extraParams
+      else
+        schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
+
     lib.base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
+      if cfg.customScheme.enable then
+        mustacheCustom cfg.customScheme.path name type
+      else
         mustache cfg.scheme cfg.variant name type;
   };
 }
