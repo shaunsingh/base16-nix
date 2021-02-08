@@ -90,7 +90,7 @@ in
         default = "solarized-dark";
       };
       extraParams = mkOption {
-        type = attrsOf str;
+        type = attrsOf anything;
         default = {};
       };
       defaultTemplateType = mkOption {
