@@ -1,8 +1,8 @@
 {
   "alacritty": {
     "url": "https://github.com/aaron-williamson/base16-alacritty",
-    "rev": "5166b25c65545333de29763efe8c2b62ba37ed6a",
-    "sha256": "01qczdmbpkn05v2sh49yx8rkib6a6z8ba70qga061gvr25y6i9gk",
+    "rev": "025688c7158eb8a3421cb2b3612e77915dce8c2a",
+    "sha256": "1yyzj11bni436iihhn0v0f927mwgbn3rc7zzfzj785ak5cn8y71j",
     "fetchSubmodules": false
   },
   "binary-ninja": {
@@ -25,14 +25,14 @@
   },
   "concfg": {
     "url": "https://github.com/h404bi/base16-concfg",
-    "rev": "da3596440fdafa7008d50cd0da950a3d6810b257",
-    "sha256": "0q1r7fxapf0i76hh359llsjichac7d68r9g8z31nni36kx0agdq9",
+    "rev": "748e1585547682f6df515cdb5197b8f17c580526",
+    "sha256": "0ydxjh5p0r28ma9mf7a6l2rpkyqxqwkmpiq5ysa77klibgwychj6",
     "fetchSubmodules": false
   },
   "conemu": {
     "url": "https://github.com/martinlindhe/base16-conemu",
-    "rev": "2618733bd41e0b88456df39c30e8a6f19bc23105",
-    "sha256": "128r8z0g9qq2r10052m0pr4n480dgsmx2j7g5l0cl7dkbmmrs0xx",
+    "rev": "c4380af0f0851f51d7354e77a93f85c7621c69c2",
+    "sha256": "1zjmm1jr7in78xjwqza6npi7w5ihvl5ic6ipd3dg9181hw0r457a",
     "fetchSubmodules": false
   },
   "console2": {
@@ -61,14 +61,14 @@
   },
   "dunst": {
     "url": "https://github.com/khamer/base16-dunst",
-    "rev": "e3194d6dad0b12e0f6dfe01b9649768a8ffb2cbb",
-    "sha256": "0z6d7k6mk74wfm1cm7a94hzd9cq8i9kd48jbg1razhacsqh3hk12",
+    "rev": "5b70a3c0177a0ad8531bb0a027f57cffd4697ec9",
+    "sha256": "0v453dlywf0xbdssvnxq66c6pah6d6n4biyrx4b6v2d4552n9lzh",
     "fetchSubmodules": false
   },
   "emacs": {
     "url": "https://github.com/belak/base16-emacs",
-    "rev": "d68512c0856f57a19cd49d1034199836352c15a0",
-    "sha256": "1h98ra53i7hc7zi9yjc6p29f70r04hivdczhw4imds13akq6j034",
+    "rev": "041e442b6ab2b85a254e17bfc776a508e1b66abf",
+    "sha256": "1rcw4jsla3fhrb6b5margiwk2i2m0rrf3vp8lxk8vdg9bsy5ikmc",
     "fetchSubmodules": false
   },
   "everything": {
@@ -79,14 +79,14 @@
   },
   "fzf": {
     "url": "https://github.com/fnune/base16-fzf",
-    "rev": "ef4c386689f18bdc754a830a8e66bc2d46d515ae",
-    "sha256": "1hcr9sq3bxnin2b1pn9dzw39ddxsx1a0fr075l62yn9203fvq0hq",
+    "rev": "2cdcf81f223795cac4fae1356efa2ca7e8c13571",
+    "sha256": "05207ihx08f5iasldwzzw3vf9hby1rz0nlgxwxl5a1bxls4wwk4l",
     "fetchSubmodules": false
   },
   "gnome-terminal": {
     "url": "https://github.com/aaron-williamson/base16-gnome-terminal",
-    "rev": "5531e34bd80f67d84b08bccaf0a832005453f57f",
-    "sha256": "034ml2yyapnpq23nvsivkzd58b2q05qhrrc0xaflf4bg8vdynvl5",
+    "rev": "3a4c91728101bf4fa00c77a384c5c649866bd595",
+    "sha256": "1y8dxpy96hl4cmdp6ga25p4v7g1ahvkl5bl7v1sk2lpp4zicx293",
     "fetchSubmodules": false
   },
   "godot": {
@@ -97,14 +97,20 @@
   },
   "gtk-flatcolor": {
     "url": "https://github.com/Misterio77/base16-gtk-flatcolor",
-    "rev": "c30b2ed92d882b447f1d4c621b86a0fec228c5b4",
-    "sha256": "1g3a7jwlhhhzwgqn8bvngc2rd2nmzni8m3f7ki1f204h4csmyy4j",
+    "rev": "2e19703f19feda5ecd95fc5fbd22e7548b489f13",
+    "sha256": "17zrf8m3mck6hwfq0aya6zxjs3jj2s7z1jd06x0jm3lcyqjf4glg",
     "fetchSubmodules": false
   },
   "gtk2": {
     "url": "https://github.com/dawikur/base16-gtk2",
     "rev": "4e43875501dc7c6366296b4393268cb4a8c2d223",
     "sha256": "0pclinv6yk6b4b9fwgsplvafn9qz2n6hkf1hxg0vz8v3nrdv1vgh",
+    "fetchSubmodules": false
+  },
+  "hexchat": {
+    "url": "https://github.com/Diablo-D3/base16-hexchat",
+    "rev": "136810453605f921260131619430b1817215d45e",
+    "sha256": "0dfpprq39piavq26pjbhydkdlx4x7187h27bn20sp067a0is8iz8",
     "fetchSubmodules": false
   },
   "highlight": {
@@ -211,8 +217,8 @@
   },
   "prompt-toolkit": {
     "url": "https://github.com/memeplex/base16-prompt-toolkit",
-    "rev": "be359c8077c9b0c167a97233b17c90b0bf78a253",
-    "sha256": "10j2a8j2mqvdwa0g5mzdxm3s3pfn05gnrab6f6kdv0q8xbwbq1ia",
+    "rev": "8a52f886005eb1fa005fd65a2c4b1a680a1f1d91",
+    "sha256": "0ry7rzjshs3q677v01rcfg75zyd06qxx3qz52czd0gh84zrjs8ix",
     "fetchSubmodules": false
   },
   "putty": {
@@ -247,8 +253,8 @@
   },
   "qutebrowser": {
     "url": "https://github.com/theova/base16-qutebrowser",
-    "rev": "edc0d85e062b293e1146a53178605894bdb784ef",
-    "sha256": "1bri896palqdx0mglbp2ppz6gi9axxjbahz31fkmgzcs9djhvwy2",
+    "rev": "294a22d24bfb0648935386fa8648c453003a58fe",
+    "sha256": "1kwjpgvyazcns83q4z3qdkfy5zmbrmbkrar861ds2199j194xwsj",
     "fetchSubmodules": false
   },
   "rofi": {
@@ -361,8 +367,8 @@
   },
   "vscode": {
     "url": "https://github.com/golf1052/base16-vscode",
-    "rev": "bb69a564f41925b8a2d35195290d0872e69f16ab",
-    "sha256": "0xybncvsrp7f644h98sga7pcj2sr6rm2y5vkjnfqn1p3qaymfjh0",
+    "rev": "bec6c99a8751f8562a283b2165914ae9085252e5",
+    "sha256": "08racpcv3kdkks4s0dsypjp1gz6qv7crjbs2jpf6bwb6mya0h71m",
     "fetchSubmodules": false
   },
   "waybar": {
@@ -383,6 +389,12 @@
     "sha256": "15gj7ibdh3n2mmxlkilz3svlpmq3yp77bm6gjkz377ilynmxb2nq",
     "fetchSubmodules": false
   },
+  "wofi": {
+    "url": "https://git.sr.ht/~knezi/base16-wofi",
+    "rev": "2182a5ad36d372e625b3d8e1a20ba7447e77ed22",
+    "sha256": "0hzn9lgh7rzahmzzdsgxnz4f8vvcpx5diwsnc7gb29gj9nbb1a8f",
+    "fetchSubmodules": false
+  },
   "xcode": {
     "url": "https://github.com/kreeger/base16-xcode",
     "rev": "cea39392e45deed6073ea288bb216b66153f9b4a",
@@ -391,8 +403,8 @@
   },
   "xfce4-terminal": {
     "url": "https://github.com/afg984/base16-xfce4-terminal",
-    "rev": "9596bd6d13f46294cbf650f16ada5ce6a4ff8521",
-    "sha256": "0dbqf7y7h795mdknj4rfr4q4blxx8c8qz6japj4c7g60l7rjs4l1",
+    "rev": "d937d5da60d7ee1fb61ab75bd10c1b107b32790c",
+    "sha256": "1kyfaqkzrp5hrp7kikjrybmfipgs98nqvzb6sd54x5gsbghcgbj0",
     "fetchSubmodules": false
   },
   "xresources": {
@@ -409,8 +421,8 @@
   },
   "zathura": {
     "url": "https://github.com/nicodebo/base16-zathura",
-    "rev": "7c276e53401903fda57c52628e0cfb67e70bbdda",
-    "sha256": "1x32hqa7qpppvy9jms2c6ib9g6mybbwrfbbqw5pfx5ksfbijaypp",
+    "rev": "506228ddd4fb943f93b655c58721a4d639bcba12",
+    "sha256": "0p5m7jkqyzl33awaqcpd3h20akz7ak1j7lrrs344kyfywy2kpgn9",
     "fetchSubmodules": false
   }
 }

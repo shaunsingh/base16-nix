@@ -55,8 +55,8 @@
   },
   "cupertino": {
     "url": "https://github.com/Defman21/base16-cupertino",
-    "rev": "8df41b787a16640dd29f88251e95beed4bf9a5c5",
-    "sha256": "1w8j48rf7f0zp4jjwp9n0ml0m4b7wscf3nib1bs9kcdlnm3rnbq1",
+    "rev": "16d202574c695c8c7b5bcb37277e7d8bda465604",
+    "sha256": "12n82p4dp9d939710hvsn6g0jga3b3s05c16f7h6a4gcg14vnqkj",
     "fetchSubmodules": false
   },
   "darkmoss": {
@@ -79,8 +79,8 @@
   },
   "dirtysea": {
     "url": "https://github.com/tartansandal/base16-dirtysea-scheme",
-    "rev": "f932a2ce5a2b56e4c4ec827198af7f4475cb5b32",
-    "sha256": "0cpgz0ls6nsahakwmywh8s4scjawpxqlfm61x2v2r5xkl8fig41r",
+    "rev": "6785ce5ec20f89cf2d305bd974320519895915ef",
+    "sha256": "1dh6msmk7pnw60c925lyqivvh8zpgadvp3g1rxscy66x75dz6ijk",
     "fetchSubmodules": false
   },
   "dracula": {
@@ -185,6 +185,12 @@
     "sha256": "0s3cr9mwyf12z7hk4p7vahrvrpcjfhw04k6gi3f8i3ircpcbys0f",
     "fetchSubmodules": false
   },
+  "kimber": {
+    "url": "https://github.com/akhsiM/base16-kimber-scheme",
+    "rev": "5b1963918405bbb28479fb7b14872887080d8083",
+    "sha256": "1x3ghd1917pkykjwlqhz1z7f6gsmdsgzibw8vgyhpfysvap0l3j4",
+    "fetchSubmodules": false
+  },
   "materia": {
     "url": "https://github.com/Defman21/base16-materia",
     "rev": "9c0952eda648246e9b9725e45e2f15b5065bcb61",
@@ -275,22 +281,34 @@
     "sha256": "1ngkrdr4z5j8swb4z3dnkghn3q4sc5a3dhfs00g7idc4jl1n7z4i",
     "fetchSubmodules": false
   },
+  "sagelight": {
+    "url": "https://github.com/cveldy/base16-sagelight-scheme",
+    "rev": "51b88f7903ae1ce6a51851929010f9858c3ee5bd",
+    "sha256": "0m8k5zic3vjil5xrsgrx0n4ib51fvjvwszbzr7nvilbhs5qa00h6",
+    "fetchSubmodules": false
+  },
   "sandcastle": {
     "url": "https://github.com/gessig/base16-sandcastle-scheme",
     "rev": "bd11adf690714ac74d82865776e05845f2ab3481",
     "sha256": "182ny7wgpidhci7g01rvvaxhm00iw07sn32ibb2lgdhir1rkf977",
     "fetchSubmodules": false
   },
+  "silk": {
+    "url": "https://github.com/misterio77/base16-silk-scheme",
+    "rev": "4ef846a1a70e32eae8d09749b87d4db6f123ce17",
+    "sha256": "0csvrph1lvr0zgh8s279vnz5sgixaklnk67b8gjsb0grp7xcgrib",
+    "fetchSubmodules": false
+  },
   "snazzy": {
     "url": "https://github.com/h404bi/base16-snazzy-scheme",
-    "rev": "5789feadb12b35604ed95a2fe1b028fafe64d7f1",
-    "sha256": "08wv03305c8asbdhd9b4i6gsgzk5qvnlrmdn7lyclpx4xd4qlpvx",
+    "rev": "44685eec5b20d973adfd8599e6e1dcb3f9c00d3e",
+    "sha256": "1rpyghb5fgjgvr68vkcwgvmcg9hlfmswcxvmh7w872drl1vhykpv",
     "fetchSubmodules": false
   },
   "solarflare": {
     "url": "https://github.com/mnussbaum/base16-solarflare-scheme",
-    "rev": "da0029ace2b3b799549851c567705d579a8b30f8",
-    "sha256": "023acl7l58bl8m4hgcmkr3ag0lbnf8x3mdakhci5miyz31nr2rgc",
+    "rev": "95d85867ff6b83348def2b7221d693b2f13c8388",
+    "sha256": "1gx4g22qk0h1iybzpbr3k1hacid3fdmx312r1cgxavj7bs1g0z0f",
     "fetchSubmodules": false
   },
   "solarized": {
@@ -343,8 +361,8 @@
   },
   "vice": {
     "url": "https://github.com/Thomashighbaugh/base16-vice-scheme",
-    "rev": "d91e59cc58772928afa0e3686bf0807e35ac4330",
-    "sha256": "03m1lssng85fs94a010j1lfn744ski1zzj2z85xvs1r86w0prznn",
+    "rev": "c5d44d41a59b3da139349a5d663989636ed266e5",
+    "sha256": "08sbh7w241dq4a57nw5p06g04parzhl4lplf6wgisdapj1y7bd20",
     "fetchSubmodules": false
   },
   "woodland": {
