@@ -1,7 +1,7 @@
 {
   description = "Base16-template builder for nix.";
 
-  inputs.nixpkgs.url = "nixpkgs/release-20.03";
+  inputs.nixpkgs.url = "nixpkgs/release-21.05";
 
   outputs = inputs@{ self, nixpkgs }:
     let

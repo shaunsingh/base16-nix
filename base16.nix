@@ -101,13 +101,13 @@ in
     };
   };
   config = {
-    lib.base16.theme =
+    base16.theme =
       if cfg.customScheme.enable then
         schemeJSONCustom cfg.customScheme.path // cfg.extraParams
       else
         schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
 
-    lib.base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
+    base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
       if cfg.customScheme.enable then
         mustacheCustom cfg.customScheme.path name type
       else
