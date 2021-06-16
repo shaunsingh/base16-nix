@@ -12,13 +12,19 @@ let
   # Data file for a given base16 scheme and variant. Returns the nix store
   # path of the file.
   mkTheme = scheme: variant:
-    "${pkgs.fetchgit (schemes."${scheme}")}/${variant}.yaml";
+    "${builtins.fetchGit {
+      url = schemes.${scheme}.url;
+      rev = schemes.${scheme}.rev;
+    }}/${variant}.yaml";
 
   # Source file for a given base16 template.
   # Returns the nix store path of the file.
   mkTemplate = name: type:
     let
-      templateDir = "${pkgs.fetchgit (templates."${name}")}/templates";
+      templateDir = "${builtins.fetchGit {
+        url = templates.${name}.url;
+        rev = templates.${name}.rev;
+      }}/templates";
     in
       if pathExists (templateDir + "/${type}.mustache")
       then templateDir + "/${type}.mustache"
@@ -101,13 +107,13 @@ in
     };
   };
   config = {
-    base16.theme =
+    lib.base16.theme =
       if cfg.customScheme.enable then
         schemeJSONCustom cfg.customScheme.path // cfg.extraParams
       else
         schemeJSON cfg.scheme cfg.variant // cfg.extraParams;
 
-    base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
+    lib.base16.templateFile = { name, type ? cfg.defaultTemplateType, ... }:
       if cfg.customScheme.enable then
         mustacheCustom cfg.customScheme.path name type
       else
