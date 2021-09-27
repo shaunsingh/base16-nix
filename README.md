@@ -14,7 +14,7 @@ Differences:
 import this flake in your 'flake.nix':
 
 ```nix
-inputs.base16.url = 'github:alukardbf/base16-nix';
+inputs.base16.url = "github:alukardbf/base16-nix";
 ```
 
 then, in any home-manager configuration:
@@ -22,8 +22,7 @@ then, in any home-manager configuration:
 ```nix
 home.user.${user} = { config, pkgs, lib }: {
   imports = [ base16.hmModule ];
-
-}
+};
 ```
 
 ```nix
@@ -48,11 +47,11 @@ home.user.${user} = { config, pkgs, lib }: {
     ###############################
 
     programs.bash.initExtra = ''
-      source ${config.lib.base16.templateFile { name = "shell"; };}
+      source ${config.lib.base16.templateFile { name = "shell"; }}
     '';
     programs.rofi = {
       enable = true;
-      theme = "${config.lib.base16.templateFile { name = "rofi"; type = "color"; };}";
+      theme = "${config.lib.base16.templateFile { name = "rofi"; type = "colors"; }}";
     };
 
     # 2. Template strings directly into other home-manager configuration
@@ -103,7 +102,7 @@ You can also use local schemes:
       customScheme = {
         enable = true;
         path = ./base16-custom-scheme.yaml;
-      }
+      };
     };
   };
 }
@@ -130,13 +129,13 @@ inputs.base16-horizon-scheme = {
       customScheme = {
         enable = true;
         path = "${inputs.base16-horizon-scheme}/horizon-dark.yaml";
-      }
+      };
     };
 
     # The template will be generated from the local scheme
     programs.rofi = {
       enable = true;
-      theme = "${config.lib.base16.templateFile { name = "rofi"; };}";
+      theme = "${config.lib.base16.templateFile { name = "rofi"; }}";
     };
   };
 }
@@ -146,12 +145,12 @@ inputs.base16-horizon-scheme = {
 
 Changing themes involves switching the theme definition and typing
 `home-manager switch`. There is no attempt in general to force programs to
-reload, and not all are able to reload their configs, although I have found
-that reloading xmonad and occasionally restarting applications has been
-enough.
+reload, and not all are able to reload their configs, although occasionally restarting applications has been enough.
 
 You are unlikely to achieve a complete switch without logging out and logging back
 in again.
+
+Also, if you use home-manager as a module in the system configuration, the switch should be done with the command `nixos-rebuild switch`.
 
 ## Updating Sources
 
@@ -159,7 +158,8 @@ If you're using nix flakes:
 
 - Fork this repository
 - `cd` into repository dir
-- Enter `nix develop` and then run `update-base16`
+- Enter `nix develop` and then run `update-base16` OR
+- Enter `nix run .`
 - Commit and push new files
 
 If you're **not** using nix flakes:
