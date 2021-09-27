@@ -154,9 +154,9 @@
   },
   "dracula": {
     "url": "https://github.com/dracula/base16-dracula-scheme",
-    "rev": "970c1b5bbb99cd99595ab4ace1a0ba4af9695774",
-    "path": "/nix/store/asbv776xr8gn73lwj24b5vlbnqil4f1x-base16-dracula-scheme",
-    "sha256": "18arxaws313q4l32w0y8bqsl1x5n7m0djams0nphnw1pkc3bfkbm",
+    "rev": "04c8c0880e63ec697735b59530c2e425d618991c",
+    "path": "/nix/store/nl1jc41lpdkzhl6jaqxi1cab19jci6n1-base16-dracula-scheme",
+    "sha256": "16df3ksqzhllkabr6m88vn3jhsp1cbx79kfg7hjw1zlkva1bkch0",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -586,9 +586,9 @@
   },
   "tender": {
     "url": "https://github.com/DanManN/base16-tender-scheme",
-    "rev": "c385fc0b7ce90de20de8f9128a30363ad8f90b3a",
-    "path": "/nix/store/x67q6cxappcmm2ixhp1ala3f4sr4y6pv-base16-tender-scheme",
-    "sha256": "1p78syc5ism8llcyqzxs5ni12v74f3d78hzklik4xlgz2m77lj7y",
+    "rev": "04275d828834e26e75ab187747b73badbada0d32",
+    "path": "/nix/store/bgi7vxwhdzdsbgqbg60iy9fv8p22znfv-base16-tender-scheme",
+    "sha256": "1ax2c0fgf6vj83ka9naskx02v6xbv1xdvc4g75apg2zv6fs939mj",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -622,9 +622,9 @@
   },
   "vice": {
     "url": "https://github.com/Thomashighbaugh/base16-vice-scheme",
-    "rev": "16014e37e97bc558fac549c5129922d46e991391",
-    "path": "/nix/store/a5x4c9322wwcg8rma1wsg42pwrkmvqna-base16-vice-scheme",
-    "sha256": "1fdy7x66s3aznid1cxrivi9nz76qb0j2zkxb55bznsnz1ba423i2",
+    "rev": "040254cd0ebf5f9ad64621b653c85e549aceadc7",
+    "path": "/nix/store/84kszhd43ikqc5w3r84cw5j1f5p364y0-base16-vice-scheme",
+    "sha256": "0hxs7wpjjkbg57vxxinxh54cgx1c1hsk5h61k498kccn4knlxf23",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
