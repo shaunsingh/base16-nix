@@ -89,11 +89,11 @@ in
       };
       scheme = mkOption {
         type = str;
-        default = "solarized";
+        default = "nord";
       };
       variant = mkOption {
         type = str;
-        default = "solarized-dark";
+        default = "nord";
       };
       extraParams = mkOption {
         type = attrsOf anything;
