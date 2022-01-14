@@ -4,7 +4,7 @@ import json
 import sys
 input = yaml.load(sys.stdin)
 input["colors"] = {}
-for (k,v) in input.copy().items():
+for (k,v) in list(input.copy().items()):
     if k[0:4] == "base":
         col = k[4:]
         input["colors"][k[4:]] = {
@@ -32,4 +32,3 @@ for (k,v) in input.copy().items():
       input["scheme-"+k] = v
 input["scheme-slug"]=sys.argv[1]
 json.dump(input, sys.stdout)
-
