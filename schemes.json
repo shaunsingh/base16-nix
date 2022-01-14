@@ -692,4 +692,13 @@
     "deepClone": false,
     "leaveDotGit": false
   }
+  "nanodark": {
+    "url": "https://github.com/shaunsingh/base16-nanodark-scheme",
+    "rev": "https://github.com/shaunsingh/base16-nanodark-scheme/commit/c43f5f6d8ad9a94e07f2709ecc4e2e65376e87dc",
+    "path": "",
+    "sha256": "",
+    "fetchSubmodules": false,
+    "deepClone": false,
+    "leaveDotGit": false
+  }
 }
