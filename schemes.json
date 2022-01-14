@@ -271,9 +271,9 @@
   },
   "horizon": {
     "url": "https://github.com/michael-ball/base16-horizon-scheme",
-    "rev": "644d073863ba9f863eef3b88a8f8607d0ace0063",
-    "path": "/nix/store/73pknkn1g07khb6039jsnx9zpfdf9iy5-base16-horizon-scheme",
-    "sha256": "1c88z0zv5wwc5p6ddvqv9h6681cayvkj5qxyxsig47lndx5zvjq3",
+    "rev": "4eabc3a5f7fc823cf3ceecda99dbef4e54c52574",
+    "path": "/nix/store/2ripcbbl590wqph48gygivk9sja0jn0g-base16-horizon-scheme",
+    "sha256": "1hkwbifmgq6gydfmp3wxrsb9nflxdryahqs6jn07yzivaiyv1g6d",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -568,9 +568,9 @@
   },
   "synth-midnight": {
     "url": "https://github.com/michael-ball/base16-synth-midnight-scheme",
-    "rev": "bbb9d8300ab33c490038752f2e235f2467f7c6d8",
-    "path": "/nix/store/8w1js6zw7q1fvr9rnhsr5cnqj3sh94lp-base16-synth-midnight-scheme",
-    "sha256": "0xs02n792vq4gwz7qw80qf74d68i3x47zgsrrf35jl9mghn1csda",
+    "rev": "ad5722d10a1b7a720a2a9b75429858348c08fa55",
+    "path": "/nix/store/97jyqqh6712qd2hpjnwijd67say75p59-base16-synth-midnight-scheme",
+    "sha256": "181alzx3jwgq7kix0mlcxzm4zy6vwv1z36r4f9pl7gkxsf2lyaiq",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -622,9 +622,9 @@
   },
   "vice": {
     "url": "https://github.com/Thomashighbaugh/base16-vice-scheme",
-    "rev": "040254cd0ebf5f9ad64621b653c85e549aceadc7",
-    "path": "/nix/store/84kszhd43ikqc5w3r84cw5j1f5p364y0-base16-vice-scheme",
-    "sha256": "0hxs7wpjjkbg57vxxinxh54cgx1c1hsk5h61k498kccn4knlxf23",
+    "rev": "e8b3839f812dd752172f061572cbe5beefc861c5",
+    "path": "/nix/store/63074nnaxivg3xf18msy6xad32lr00z7-base16-vice-scheme",
+    "sha256": "0rm05d4xkfa7kjcdgiq0w56hc43midw2rdhnznp8man955xn7r20",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -688,15 +688,6 @@
     "rev": "6e83e1d56216762b4f250443af277a000f9d3c0b",
     "path": "/nix/store/rwjga01yh5z9y8djksmwwxa14bakrh6g-base16-nord-scheme",
     "sha256": "059cs61qaq6pg5lcvrbww894wnv0v4i1164vavyh0bqpy4zi41f9",
-    "fetchSubmodules": false,
-    "deepClone": false,
-    "leaveDotGit": false
-  }
-  "nanodark": {
-    "url": "https://github.com/shaunsingh/base16-nanodark-scheme",
-    "rev": "https://github.com/shaunsingh/base16-nanodark-scheme/commit/c43f5f6d8ad9a94e07f2709ecc4e2e65376e87dc",
-    "path": "",
-    "sha256": "",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false

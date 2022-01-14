@@ -4,11 +4,11 @@
   inputs.nixpkgs.url = "nixpkgs/release-21.05";
 
   outputs = { self, nixpkgs }@inputs:
-    with nixpkgs.legacyPackages."x86_64-linux"; rec {
+    with nixpkgs.legacyPackages."aarch64-darwin"; rec {
       # Home-Manager Module
       hmModule = ./base16.nix;
 
-      packages.x86_64-linux.update-base16 = (let
+      packages.aarch64-darwin.update-base16 = (let
         mkScript = { name, file, env ? [ ] }:
           writeTextFile {
             name = "${name}";

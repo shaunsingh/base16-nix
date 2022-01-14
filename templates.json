@@ -109,9 +109,9 @@
   },
   "emacs": {
     "url": "https://github.com/belak/base16-emacs",
-    "rev": "9836cc26c2f8ed9d809feee2bfd8c082cfdbd033",
-    "path": "/nix/store/h812gzpkavnrgzza4nbpfnd598ys0fjy-base16-emacs",
-    "sha256": "146fmjkib6d05xyz88yc903w8wla19f0vy3f91yr4qj7ab74frxf",
+    "rev": "ad2fd1137d6ec144f87b26dce15ce5c5d42bde39",
+    "path": "/nix/store/rmmcyakfm68y3imxbxilx2inv1nfqrkw-base16-emacs",
+    "sha256": "009k9j7bi7x8pmp5d12bdzng3ampqwy8l1jf1dxxf9989wv27hrc",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -199,9 +199,9 @@
   },
   "highlightjs": {
     "url": "https://github.com/highlightjs/base16-highlightjs",
-    "rev": "ab2fa899d3052ca9b4e673b5800b623885e6c9dc",
-    "path": "/nix/store/rjkksa6pdj35f3is0m00pvs9l50wwwh6-base16-highlightjs",
-    "sha256": "17iz49fjxvcpgcydmwh5blh2j8c4xvv273xngsnk9qsgq095gdc7",
+    "rev": "c662194d969d818d20c0ebbde9fca567f02921cc",
+    "path": "/nix/store/lk2nzcqfnmgvqicrkszk646h8la5qyc6-base16-highlightjs",
+    "sha256": "0mn0mf60adr7wc14b6b0dbhmxrw4vjdb1m3306f7ca9kxnnhll8n",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
@@ -424,9 +424,9 @@
   },
   "rofi": {
     "url": "https://gitlab.com/0xdec/base16-rofi",
-    "rev": "afbc4b22d8f415dc89f36ee509ac35fb161c6df4",
-    "path": "/nix/store/1gn13caqyz8nl4mm88jnv8n78yg8rm6g-base16-rofi",
-    "sha256": "1f9gkfc4icdgdj0fkkgg1fw3n6imlr1sbi42qm9hbkjxy5fmzay2",
+    "rev": "fbe876f7f75c25f27b6bc5b0572414827ee106b5",
+    "path": "/nix/store/q49v59d65w55dxhk7sppmx037k1x9yyn-base16-rofi",
+    "sha256": "14868sfkxlcw1dz7msvvmsr95mzvv6av37wamssc5jaqjdpym8df",
     "fetchSubmodules": false,
     "deepClone": false,
     "leaveDotGit": false
