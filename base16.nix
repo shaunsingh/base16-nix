@@ -34,7 +34,7 @@ let
   # a transformation of this data such as rgb. The hacky python script pre-
   # processes the theme file in this way for consumption by the mustache
   # engine below.
-  python = pkgs.python.withPackages (ps: [ ps.pyyaml ]);
+  python3 = pkgs.python3.withPackages (ps: [ ps.pyyaml ]);
   preprocess = src:
     pkgs.stdenv.mkDerivation {
       name = "yaml";
@@ -42,7 +42,7 @@ let
       builder = pkgs.writeText "builder.sh" ''
         slug_all=$(${pkgs.coreutils}/bin/basename $src)
         slug=''${slug_all%.*}
-        ${python}/bin/python ${./base16writer.py} $slug < $src > $out
+        ${python3}/bin/python3 ${./base16writer.py} $slug < $src > $out
       '';
       allowSubstitutes = false;  # will never be in cache
     };
