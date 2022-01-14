@@ -47,10 +47,10 @@
         };
       });
 
-      defaultPackage.x86_64-linux = packages.x86_64-linux.update-base16;
+      defaultPackage.aarch64-darwin = packages.aarch64-darwin.update-base16;
 
-      devShell.x86_64-linux = mkShell {
-        buildInputs = [ packages.x86_64-linux.update-base16 ];
+      devShell.aarch64-darwin = mkShell {
+        buildInputs = [ packages.aarch64-darwin.update-base16 ];
       };
     };
 }
