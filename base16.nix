@@ -89,11 +89,11 @@ in
       };
       scheme = mkOption {
         type = str;
-        default = "xcode-dusk";
+        default = "onedark";
       };
       variant = mkOption {
         type = str;
-        default = "xcode-dusk";
+        default = "onedark";
       };
       extraParams = mkOption {
         type = attrsOf anything;
